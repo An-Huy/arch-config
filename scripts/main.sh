@@ -3,10 +3,10 @@
 # Basic  utils	
 sudo pacman -Syu --noconfirm curl wget byobu firefox
 git clone https://aur.archlinux.org/yay.git $HOME/yay/
-cd $HOME/yay/ && makepkg -si		
+cd $HOME/yay/ && makepkg -si	
 
-# bspwm & polybar
-bash wm.sh
+#bspwm and polybar
+bash $HOME/arch-config/scripts/wm.sh
 
 # AstroNvim	
 sudo pacman -S --noconfirm neovim nodejs npm	
