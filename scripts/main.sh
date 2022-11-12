@@ -1,7 +1,8 @@
 #!usr/bin/bash		
 	
 # Basic  utils	
-sudo pacman -Syu --noconfirm curl wget byobu firefox
+sudo pacman -Syu 
+sudo pacman -S --noconfirm curl wget byobu firefox
 git clone https://aur.archlinux.org/yay.git $HOME/yay/
 cd $HOME/yay/ && makepkg -si		
 
