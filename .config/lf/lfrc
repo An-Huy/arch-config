@@ -1,0 +1,87 @@
+# =============================================================================
+#                                 OPTIONS
+# =============================================================================
+
+set shell sh
+set drawbox
+set icons true
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set autoquit on
+
+
+# =============================================================================
+#                                FUNCIONS
+# =============================================================================
+
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd open ${{
+    case $(file --mime-type -Lb $f) in
+        text/*) $EDITOR $fx ;;
+	image/*) setsid -f sxiv $fx 2>/dev/null;;
+	application/pdf) setsid -f zathura $fx >/dev/null 2>&1 ;;
+        *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;; 
+    esac
+}}
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+
+# =============================================================================
+#                              KEYBINDINGS
+# =============================================================================
+
+map <c-n> push :mkdir<space>
+map <c-r> reload
+map <enter> shell
+map H set hidden!
+map x $$f
+map X !$f
+map D delete
+map E extract
+map o open
+map O open
+
+map A rename # at the very end
+map C push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extension
+map a push A<a-b> # after extension
+
+map <c-e> down
+map <c-y> up
+map V push :!nvim<space>
+
+map W $setsid -f $TERMINAL >/dev/null 2>&1
+
+map Y $printf "%s" "$fx" | xclip -selection clipboard
