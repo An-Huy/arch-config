@@ -1,8 +1,7 @@
 #!usr/bin/bash		
 	
 # Basic  utils	
-sudo pacman -Syu && sudo pacman -Syy 
-sudo pacman -S --noconfirm curl wget byobu firefox
+sudo pacman -Syu --noconfirm curl wget byobu firefox
 git clone https://aur.archlinux.org/yay.git $HOME/yay/
 cd $HOME/yay/ && makepkg -si		
 
@@ -16,7 +15,7 @@ git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim && nvim +PackerS
 # Lf	
 sudo pacman -S --noconfirm libxext libxres ffmpegthumbnailer imagemagick poppler wkhtmltopdf unzip unrar docx2txt ueberzug	
 yay -S --noconfirm epub-thumbnailer-git lf	
-	
+
 # Zsh
 bash $HOME/arch-config/scripts/zsh.sh
 
