@@ -35,6 +35,6 @@ yay -S --noconfirm epub-thumbnailer-git lf
 	
 # Zsh
 sudo pacman -S --noconfirm zsh
-bash $HOME/config/scripts/zsh.sh
+bash $HOME/arch-config/scripts/zsh.sh
 
 sudo reboot now		
