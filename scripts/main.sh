@@ -14,15 +14,15 @@ cp -r $HOME/arch-config/wallpaper/ $HOME/
 
 if [ -f $HOME/.xinitrc ]; then
     echo "File already exist, change file to .bak"
-    sudo mv $HOME/.xinitrc $HOME/.xinitrc.bak && sudo cp $HOME/config/dotfiles/.xinitrc $HOME/.xinitrc
+    sudo mv $HOME/.xinitrc $HOME/.xinitrc.bak && sudo cp $HOME/arch-config/dotfiles/.xinitrc $HOME/.xinitrc
 else
-    sudo cp $HOME/config/dotfiles/.xinitrc $HOME/.xinitrc
+    sudo cp $HOME/arch-config/dotfiles/.xinitrc $HOME/.xinitrc
 fi
 
 if [ -d $HOME/.config/ ]; then
-	cp -r $HOME/config/.config/* $HOME/.config/
+	cp -r $HOME/arch-config/.config/* $HOME/.config/
 else
-    mkdir -p $HOME/.config/ && cp -r $HOME/config/.config/* $HOME/.config/
+    mkdir -p $HOME/.config/ && cp -r $HOME/arch-config/.config/* $HOME/.config/
 fi	
 
 # AstroNvim	
