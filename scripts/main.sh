@@ -9,7 +9,8 @@ cd $HOME/yay/ && makepkg -si
 sudo pacman -S --noconfirm xorg xorg-xinit bspwm sxhkd rofi terminator picom 
 sudo pacman -S --noconfirm arandr feh dunst redshift flameshot stalonetray neofetch jgmenu 
 yay -S --noconfirm polybar pacman-contrib pulseaudio ttf-font-awsome siji-git alsa-utils		
-	
+cp -r $HOME/arch-config/wallpaper/ $HOME/
+
 if [ -f $HOME/.xinitrc ]; then
     echo "File already exist, change file to .bak"
     sudo mv $HOME/.xinitrc $HOME/.xinitrc.bak && sudo cp $HOME/config/dotfiles/.xinitrc $HOME/.xinitrc
