@@ -9,8 +9,9 @@ git clone https://github.com/ryanoasis/nerd-fonts.git && ./nerd-fonts/install.sh
 if [ -f $HOME/.zshrc ]; 
 then
     echo "File already exist, change file to .bak"
-    sudo mv $HOME/.zshrc $HOME/.zshrc.bak && sudo cp $HOME/config/dotfiles/.zshrc $HOME/.zshrc
+    sudo mv $HOME/.zshrc $HOME/.zshrc.bak && sudo cp $HOME/arch-config/dotfiles/.zshrc $HOME/.zshrc
     source $HOME/.zshrc
 else
-    sudo cp $HOME/config/dotfiles/.zshrc $HOME/.zshrc && source $HOME/.zshrc
+    sudo cp $HOME/arch-config/dotfiles/.zshrc $HOME/.zshrc
+    source $HOME/.zshrc
 fi
