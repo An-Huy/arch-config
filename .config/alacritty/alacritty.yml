@@ -7,8 +7,8 @@
 
 ## Import files (Colors, Fonts, Etc)
 import:
-  - ~/.config/bspwm/alacritty/colors.yml
-  - ~/.config/bspwm/alacritty/fonts.yml
+  - /usr/share/archcraft/dwm/alacritty/colors.yml
+  - /usr/share/archcraft/dwm/alacritty/fonts.yml
 
 ## Set environment variables
 env:
@@ -18,7 +18,7 @@ env:
 ## Terminal window settings
 window:
   dimensions:
-    columns: 82
+    columns: 84
     lines: 24
 
   padding:
