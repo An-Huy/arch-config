@@ -1,6 +1,6 @@
 #!usr/bin/bash
 
-sudo pacman -S --noconfirm xorg xorg-xinit bspwm sxhkd rofi terminator picom arandr feh ueberzug 
+sudo pacman -S --noconfirm xorg xorg-xinit bspwm sxhkd rofi terminator picom arandr feh ranger ueberzug 
 yay -S --noconfirm polybar pacman-contrib pulseaudio ttf-font-awsome siji-git alsa-utils		
 cp -r $HOME/arch-config/wallpaper/ $HOME/
 
